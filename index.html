@@ -120,36 +120,45 @@
   /* PORTFOLIO GRID */
   .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
   .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  
+  /* NEW VIDEO STYLING FOR FASTER LOADING */
   .reel{
     position:relative; border-radius:14px; overflow:hidden; aspect-ratio:4/5;
     background:linear-gradient(155deg, #1c2018, #0d0e0c);
     border:1px solid var(--line);
     display:flex; align-items:flex-end; padding:20px;
+    cursor: pointer;
   }
   .reel.wide{aspect-ratio:16/9;}
   .reel::after{
     content:''; position:absolute; inset:0;
     background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
   .reel-content{position:relative; z-index:2; width:100%;}
-  .reel-content .tc{font-size:10px; margin-bottom:8px;}
-  .reel-content h4{font-size:18px; font-family:'Inter'; font-weight:600; text-transform:none;}
-  .reel-content p{font-size:13px; color:var(--ink-dim); margin-top:4px;}
   .reel-embed{padding:0;}
   .reel-embed::after{display:none;}
-  .reel-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0; z-index:1;}
-  .reel-tag{position:absolute; top:14px; left:14px; z-index:2; pointer-events:none; background:rgba(0,0,0,0.55); padding:6px 12px; border-radius:100px; backdrop-filter:blur(4px);}
+  
+  /* The Thumbnail Image */
+  .yt-thumb {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
+  }
+  
+  .reel-tag{position:absolute; top:14px; left:14px; z-index:3; pointer-events:none; background:rgba(0,0,0,0.55); padding:6px 12px; border-radius:100px; backdrop-filter:blur(4px);}
   .reel-tag .tc{font-size:10px;}
 
   .play-btn{
-    position:absolute; top:20px; right:20px; z-index:3;
-    width:38px; height:38px; border-radius:50%;
-    background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.2);
+    position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:3;
+    width:54px; height:54px; border-radius:50%;
+    background:rgba(198,255,58,0.9); border:1px solid rgba(255,255,255,0.2);
     display:flex; align-items:center; justify-content:center;
     backdrop-filter:blur(4px);
   }
-  .play-btn svg{width:12px; height:12px; fill:var(--accent); margin-left:2px;}
+  .play-btn svg{width:20px; height:20px; fill:#0A0B0A; margin-left:4px;}
+  .reel:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: #fff; }
   .reel:hover{border-color:var(--accent);}
+  .reel:hover .yt-thumb { opacity: 0.8; }
 
   /* SERVICES */
   .service-card{
@@ -163,54 +172,6 @@
   .service-card h3{font-size:22px; margin-top:18px; text-transform:none; font-family:'Inter'; font-weight:700;}
   .service-card p{color:var(--ink-dim); font-size:14px; margin-top:10px;}
   .service-card:hover{border-color:var(--accent);}
-
-  /* SKILLS */
-  .skill-list{display:flex; flex-wrap:wrap; gap:12px;}
-  .skill-pill{
-    border:1px solid var(--line); padding:12px 20px; border-radius:100px;
-    font-family:'Space Mono'; font-size:13px; color:var(--ink-dim);
-  }
-  .skill-pill b{color:var(--ink); font-weight:400;}
-
-  /* TESTIMONIALS */
-  .testi-card{
-    border:1px solid var(--line); border-radius:14px; padding:28px;
-    background:var(--panel);
-  }
-  .testi-card p{font-size:15px; color:var(--ink); margin-bottom:20px;}
-  .testi-who{display:flex; align-items:center; gap:12px;}
-  .testi-avatar{width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent), #294016); flex-shrink:0;}
-  .testi-who b{font-size:14px; display:block;}
-  .testi-who span{font-size:12px; color:var(--ink-dim);}
-
-  /* PRICING */
-  .price-card{
-    border:1px solid var(--line); border-radius:16px; padding:36px 28px;
-    display:flex; flex-direction:column; height:100%;
-  }
-  .price-card.featured{border-color:var(--accent); background:rgba(198,255,58,0.04); position:relative;}
-  .price-card.featured::before{
-    content:'MOST BOOKED'; position:absolute; top:-12px; left:28px;
-    background:var(--accent); color:#0A0B0A; font-size:10px; font-weight:700;
-    padding:5px 12px; border-radius:100px; letter-spacing:1px;
-    font-family:'Space Mono';
-  }
-  .price-card h3{font-size:18px; text-transform:none; font-family:'Inter'; font-weight:600; color:var(--ink-dim);}
-  .price-amt{font-family:'Anton'; font-size:44px; margin:16px 0;}
-  .price-amt span{font-family:'Inter'; font-size:14px; color:var(--ink-dim); font-weight:400;}
-  .price-list{list-style:none; margin:24px 0; flex:1;}
-  .price-list li{font-size:14px; color:var(--ink-dim); padding:8px 0; border-top:1px solid var(--line);}
-  .price-list li::before{content:'—  '; color:var(--accent);}
-
-  /* FAQ */
-  .faq-item{border-top:1px solid var(--line); padding:24px 0;}
-  .faq-item:last-child{border-bottom:1px solid var(--line);}
-  .faq-q{display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:600; font-size:16px;}
-  .faq-q .plus{color:var(--accent); font-family:'Space Mono'; font-size:20px;}
-  .faq-a{max-height:0; overflow:hidden; transition:max-height 0.3s ease;}
-  .faq-a p{color:var(--ink-dim); font-size:14px; padding-top:14px; max-width:600px;}
-  .faq-item.open .faq-a{max-height:200px;}
-  .faq-item.open .plus{transform:rotate(45deg);}
 
   /* FINAL CTA */
   .final-cta{text-align:center; padding:130px 0;}
@@ -275,17 +236,20 @@
       <p>A look at some of my latest edits crafted to turn raw footage into engaging, polished content.</p>
     </div>
     <div class="grid-3">
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="Xv3t_nxV-34">
+        <img src="https://img.youtube.com/vi/Xv3t_nxV-34/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Short-form</span></div>
-        <iframe src="https://www.youtube.com/embed/Xv3t_nxV-34" title="Project title 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="frKxr96lo1U">
+        <img src="https://img.youtube.com/vi/frKxr96lo1U/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Short-form</span></div>
-        <iframe src="https://www.youtube.com/embed/frKxr96lo1U" title="Project title 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="ibsqlVDirfU">
+        <img src="https://img.youtube.com/vi/ibsqlVDirfU/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Short-form</span></div>
-        <iframe src="https://www.youtube.com/embed/ibsqlVDirfU" title="Project title 03" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
     </div>
   </div>
@@ -299,13 +263,15 @@
       <p>Vertical edits made to hook in the first second and hold through the loop.</p>
     </div>
     <div class="grid-3">
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="4CYVUj5jBxo">
+        <img src="https://img.youtube.com/vi/4CYVUj5jBxo/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Reel</span></div>
-        <iframe src="https://www.youtube.com/embed/4CYVUj5jBxo" title="Short 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="YuXdCTWbf6Q">
+        <img src="https://img.youtube.com/vi/YuXdCTWbf6Q/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Reel</span></div>
-        <iframe src="https://www.youtube.com/embed/YuXdCTWbf6Q" title="Short 03" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
     </div>
   </div>
@@ -319,13 +285,15 @@
       <p>Animated edits with motion and personality.</p>
     </div>
     <div class="grid-3">
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="IXI6xh82U1g">
+        <img src="https://img.youtube.com/vi/IXI6xh82U1g/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Animation</span></div>
-        <iframe src="https://www.youtube.com/embed/IXI6xh82U1g" title="SaaS animation 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="q3fZmKiAJ0k">
+        <img src="https://img.youtube.com/vi/q3fZmKiAJ0k/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Animation</span></div>
-        <iframe src="https://www.youtube.com/embed/q3fZmKiAJ0k" title="SaaS animation 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
     </div>
   </div>
@@ -339,13 +307,15 @@
       <p>Clean, punchy edits that keep the speaker engaging.</p>
     </div>
     <div class="grid-3">
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="kAjAlhrdBH0">
+        <img src="https://img.youtube.com/vi/kAjAlhrdBH0/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Talking head</span></div>
-        <iframe src="https://www.youtube.com/embed/kAjAlhrdBH0" title="Talking head 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
-      <div class="reel reel-embed">
+      <div class="reel reel-embed" data-video="ZRAYk_Uu4Lo">
+        <img src="https://img.youtube.com/vi/ZRAYk_Uu4Lo/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Talking head</span></div>
-        <iframe src="https://www.youtube.com/embed/ZRAYk_Uu4Lo" title="Talking head 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
     </div>
   </div>
@@ -399,10 +369,24 @@
 <div id="email-toast" style="position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px); background:#C6FF3A; color:#0A0B0A; padding:14px 22px; border-radius:100px; font-family:'Space Mono', monospace; font-size:13px; font-weight:700; opacity:0; pointer-events:none; transition:all 0.3s ease; z-index:999; white-space:nowrap;">Email copied: aevron6488@gmail.com</div>
 
 <script>
+// This script makes the video load ONLY when clicked to stop the 5-second delay
+document.addEventListener("DOMContentLoaded", function() {
+  const videoContainers = document.querySelectorAll('.reel-embed');
+  
+  videoContainers.forEach(container => {
+    container.addEventListener('click', function() {
+      const videoId = this.getAttribute('data-video');
+      // Added &rel=0 to stop random related videos at the end
+      const iframe = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" title="Video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0; z-index:10;"></iframe>`;
+      
+      this.innerHTML = iframe;
+    });
+  });
+});
+
 function bookChat(e){
   e.preventDefault();
   var email = "aevron6488@gmail.com";
-  // Try copying to clipboard so the address is available no matter what
   if(navigator.clipboard){
     navigator.clipboard.writeText(email).catch(function(){});
   }
@@ -413,7 +397,6 @@ function bookChat(e){
     toast.style.opacity = '0';
     toast.style.transform = 'translateX(-50%) translateY(20px)';
   }, 3500);
-  // Try to open the mail app / Gmail compose as well
   window.location.href = "mailto:" + email;
   setTimeout(function(){
     window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + email, "_blank");
@@ -422,4 +405,4 @@ function bookChat(e){
 </script>
 
 </body>
-</html>
+</html>  
