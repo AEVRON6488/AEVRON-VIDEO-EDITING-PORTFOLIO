@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aevron — Video Editor</title>
+
+<!-- THIS FIXES THE INSTAGRAM PREVIEW BOX -->
 <meta property="og:title" content="Aevron — Video Editor">
-<meta property="og:description" content="Helping YouTubers and brands turn raw footage into edits that hold attention.">
+<meta property="og:description" content="I'm Aevron — a video editor helping YouTubers, brands, and creators turn raw footage into edits that hold attention and drive views.">
+<meta property="og:image" content="https://img.youtube.com/vi/Xv3t_nxV-34/maxresdefault.jpg">
 <meta property="og:url" content="https://aevron6488.github.io/AEVRON-VIDEO-EDITING-PORTFOLIO/">
-<link rel="preconnect" href="https://img.youtube.com">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -125,8 +127,8 @@
   /* PORTFOLIO GRID */
   .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
   .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
-
-  /* VIDEO CARDS (thumbnail first, iframe on click) */
+  
+  /* NEW FAST-LOADING VIDEO STYLES */
   .reel{
     position:relative; border-radius:14px; overflow:hidden; aspect-ratio:4/5;
     background:linear-gradient(155deg, #1c2018, #0d0e0c);
@@ -144,11 +146,12 @@
   .reel-content{position:relative; z-index:2; width:100%;}
   .reel-embed{padding:0;}
   .reel-embed::after{display:none;}
-
+  
+  /* Instant Thumbnail */
   .yt-thumb {
     position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
   }
-
+  
   .reel-tag{position:absolute; top:14px; left:14px; z-index:3; pointer-events:none; background:rgba(0,0,0,0.55); padding:6px 12px; border-radius:100px; backdrop-filter:blur(4px);}
   .reel-tag .tc{font-size:10px;}
 
@@ -158,6 +161,7 @@
     background:rgba(198,255,58,0.9); border:1px solid rgba(255,255,255,0.2);
     display:flex; align-items:center; justify-content:center;
     backdrop-filter:blur(4px);
+    transition: 0.2s;
   }
   .play-btn svg{width:20px; height:20px; fill:#0A0B0A; margin-left:4px;}
   .reel:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: #fff; }
@@ -241,17 +245,17 @@
     </div>
     <div class="grid-3">
       <div class="reel reel-embed" data-video="Xv3t_nxV-34">
-        <img src="https://img.youtube.com/vi/Xv3t_nxV-34/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360">
+        <img src="https://img.youtube.com/vi/Xv3t_nxV-34/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Short-form</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="reel reel-embed" data-video="frKxr96lo1U">
-        <img src="https://img.youtube.com/vi/frKxr96lo1U/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360">
+        <img src="https://img.youtube.com/vi/frKxr96lo1U/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Short-form</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="reel reel-embed" data-video="ibsqlVDirfU">
-        <img src="https://img.youtube.com/vi/ibsqlVDirfU/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360">
+        <img src="https://img.youtube.com/vi/ibsqlVDirfU/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Short-form</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
@@ -268,12 +272,12 @@
     </div>
     <div class="grid-3">
       <div class="reel reel-embed" data-video="4CYVUj5jBxo">
-        <img src="https://img.youtube.com/vi/4CYVUj5jBxo/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360" loading="lazy">
+        <img src="https://img.youtube.com/vi/4CYVUj5jBxo/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Reel</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="reel reel-embed" data-video="YuXdCTWbf6Q">
-        <img src="https://img.youtube.com/vi/YuXdCTWbf6Q/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360" loading="lazy">
+        <img src="https://img.youtube.com/vi/YuXdCTWbf6Q/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Reel</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
@@ -290,12 +294,12 @@
     </div>
     <div class="grid-3">
       <div class="reel reel-embed" data-video="IXI6xh82U1g">
-        <img src="https://img.youtube.com/vi/IXI6xh82U1g/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360" loading="lazy">
+        <img src="https://img.youtube.com/vi/IXI6xh82U1g/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Animation</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="reel reel-embed" data-video="q3fZmKiAJ0k">
-        <img src="https://img.youtube.com/vi/q3fZmKiAJ0k/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360" loading="lazy">
+        <img src="https://img.youtube.com/vi/q3fZmKiAJ0k/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Animation</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
@@ -312,12 +316,12 @@
     </div>
     <div class="grid-3">
       <div class="reel reel-embed" data-video="kAjAlhrdBH0">
-        <img src="https://img.youtube.com/vi/kAjAlhrdBH0/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360" loading="lazy">
+        <img src="https://img.youtube.com/vi/kAjAlhrdBH0/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Talking head</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="reel reel-embed" data-video="ZRAYk_Uu4Lo">
-        <img src="https://img.youtube.com/vi/ZRAYk_Uu4Lo/hqdefault.jpg" class="yt-thumb" alt="Video Thumbnail" width="480" height="360" loading="lazy">
+        <img src="https://img.youtube.com/vi/ZRAYk_Uu4Lo/maxresdefault.jpg" class="yt-thumb" alt="Video Thumbnail">
         <div class="reel-tag"><span class="tc">Talking head</span></div>
         <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
@@ -346,6 +350,7 @@
   </div>
 </section>
 
+
 <section class="final-cta" id="contact">
   <div class="wrap">
     <span class="tc">00:03:00:00 — Let's Talk</span>
@@ -372,12 +377,17 @@
 <div id="email-toast" style="position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px); background:#C6FF3A; color:#0A0B0A; padding:14px 22px; border-radius:100px; font-family:'Space Mono', monospace; font-size:13px; font-weight:700; opacity:0; pointer-events:none; transition:all 0.3s ease; z-index:999; white-space:nowrap;">Email copied: aevron6488@gmail.com</div>
 
 <script>
-// Videos load ONLY when a thumbnail is clicked
+// This script makes the video load ONLY when clicked (0 second delay)
 document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll('.reel-embed').forEach(function(container) {
+  const videoContainers = document.querySelectorAll('.reel-embed');
+  
+  videoContainers.forEach(container => {
     container.addEventListener('click', function() {
-      var videoId = this.getAttribute('data-video');
-      this.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0" title="Video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0; z-index:10;"></iframe>';
+      const videoId = this.getAttribute('data-video');
+      // &rel=0 stops random related videos at the end
+      const iframe = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" title="Video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0; z-index:10;"></iframe>`;
+      
+      this.innerHTML = iframe;
     });
   });
 });
@@ -403,4 +413,4 @@ function bookChat(e){
 </script>
 
 </body>
-  </html>
+</html>
